@@ -14,6 +14,14 @@ def display_menu():
     print("7. Import contacts from a text file")
     print("8. Quit")
 
+def validate_phone(phone):
+    pattern = re.compile(r'^\+?1?\d{9,15}$')
+    return pattern.match(phone)
+
+def validate_email(email):
+    pattern = re.compile(r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$')
+    return pattern.match(email)
+
 def add_contact():
     identifier = input("Enter unique identifier (phone number or email): ")
     if identifier in contacts:
@@ -21,7 +29,13 @@ def add_contact():
         return
     name = input("Enter name: ")
     phone = input("Enter phone number: ")
+    if not validate_phone(phone):
+        print("Invalid phone number format.")
+        return
     email = input("Enter email address: ")
+    if not validate_email(email):
+        print("Invalid email address format.")
+        return
     additional_info = input("Enter additional information (address, notes): ")
     contacts[identifier] = {
         "name": name,
@@ -38,7 +52,13 @@ def edit_contact():
         return
     name = input("Enter new name: ")
     phone = input("Enter new phone number: ")
+    if not validate_phone(phone):
+        print("Invalid phone number format.")
+        return
     email = input("Enter new email address: ")
+    if not validate_email(email):
+        print("Invalid email address format.")
+        return
     additional_info = input("Enter new additional information (address, notes): ")
     contacts[identifier] = {
         "name": name,
