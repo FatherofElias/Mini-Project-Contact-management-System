@@ -65,3 +65,39 @@ if __name__ == "__main__":
     main()
 
 This ensures that the main function is called when the script is run directly
+
+
+
+
+
+                            HOW TO USE
+    When you run the script, the menu will be displayed.
+Enter the number corresponding to the action you want to perform and press Enter.
+For example, to add a new contact, enter 1.
+
+If you choose to add a new contact, you will be prompted to enter the contact details:
+
+The system will validate the phone number and email address formats. If they are valid, the contact will be added successfully.
+
+To edit a contact, choose option 2 and enter the unique identifier of the contact you want to edit.
+You will be prompted to enter the new details for the contact.
+
+To delete a contact, choose option 3 and enter the unique identifier of the contact you want to delete.
+The contact will be deleted if it exists.
+
+
+To search for a contact, choose option 4 and enter the unique identifier of the contact you want to search for.
+The contact details will be displayed if the contact is found.
+
+To display all contacts, choose option 5.
+All contacts in the system will be displayed.
+
+To export contacts, choose option 6 and enter the filename where you want to save the contacts.
+The contacts will be saved to the specified file.
+
+To import contacts, choose option 7 and enter the filename from which you want to import the contacts.
+The contacts will be imported from the specified file.
+
+
+To quit the program, choose option 8.
+The program will exit with a “Goodbye!” message.
